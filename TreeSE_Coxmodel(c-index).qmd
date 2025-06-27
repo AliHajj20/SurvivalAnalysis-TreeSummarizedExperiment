@@ -117,8 +117,8 @@ num_rows <- nrow(lrX)
 split_point <- floor(0.7 * num_rows)
 lrX_train <- lrX[1:split_point, ]
 # Replace row names with only digits extracted from original row names
-rownames(x) <- gsub("\\D", "", rownames(x))
-colnames(x) <- gsub("\\D", "", colnames(x))
+rownames(lrX_train) <- gsub("\\D", "", rownames(lrX_train))
+colnames(lrX_train) <- gsub("\\D", "", colnames(lrX_train))
 #training data clr
 # Extract colData
 col_data_train_clr <- as.data.frame(colData(tse_clr_train))
